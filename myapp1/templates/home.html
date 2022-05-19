@@ -1,0 +1,144 @@
+{% block content%}
+<!DOCTYPE html>
+<html>
+    <h2>Entrepreneurship Cell</h2>
+    <style>
+    body{
+        background:#323232;
+        }
+    h2{
+            font-size: 35px;
+            text-align: center;
+            background: orange;
+            color: white;
+            border: 1px solid yellow;
+            padding: 10px;
+            margin: 5px;
+            margin-top: 40px;
+            margin-bottom: 4px;
+            margin-right: 400px;
+            margin-left: 400px;
+            border-radius: 10px;
+    }
+    .Register{
+        background: orange;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        margin: 40px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        margin-right: 1px;
+        margin-left: 1px;
+        border-radius: 5px;
+        border: none;
+    }
+    .Login{
+        background: orange;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding: 10px;
+        margin: 40px;
+        margin-top: 40px;
+        margin-bottom: 8px;
+        margin-right: 30px;
+        margin-left: 1020px;
+        border-radius: 5px;
+        border: none;
+    }
+    .Logout{
+        background: orange;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        margin-right: 30px;
+        margin-left: 1100px;
+        border-radius: 5px;
+        border: none;
+    }
+    .facebook{
+        background: blue;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding: 10px;
+        margin: 1px;
+        margin-right: 30px;
+        margin-left: 1100px;
+        border-radius: 5px;
+        border: none;
+    }
+    .website{
+        background: lavender;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        padding: 10px;
+        margin: 10px;
+        margin-top: 8px;
+        margin-right: 20px;
+        margin-left: 1090px;
+        border-radius: 5px;
+        border: none;
+    }
+    h1{
+        font-size: 20px;
+        text-align: center;
+        color: Blue;
+        background: white;
+        border: 1px solid orange;
+        padding: 5px;
+        margin: 10px;
+        margin-top: 0px;
+        margin-bottom: 8px;
+        margin-right: 30px;
+        margin-left: 1060px;
+        border-radius: 10px;
+    }
+    h3{
+        font-style: italic;
+        font-size: 25px;
+        text-align: center;
+        color: Black;
+        background: lavender;
+        border: 3px solid black;
+        padding: 5px;
+        margin-left: 350px;
+        margin-right: 350px;
+        border-radius: 20px;
+    }
+    </style>
+    {% if user.is_authenticated %}
+    <a href="{%url 'logout'%}">
+        <button class="Logout">LOGOUT</button>
+    </a>
+    <h3>"The True Entreprenuer is a doer, not a Dreamer..."</h3>
+    <h1>For more details Click Below👇</h1>
+    <a href="https://www.facebook.com/ecell.iitkgp/?ti=as">
+        <button class="facebook">Facebook</button>
+    </a>
+    <a href="http://ecell-iitkgp.org/">
+        <button class="website">Our Website</button>
+    </a>
+    {% else %}
+    <a href="{%url 'login'%}">
+        <button class="Login">LOGIN</button>
+    </a>
+    <a href="{%url 'register'%}">
+        <button class="Register">REGISTER</button>
+    </a>
+    {% endif %}
+</html>
+{% endblock %}
